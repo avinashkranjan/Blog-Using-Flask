@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block head %} 
+<title>Posts</title>
+{% endblock %}
+{% block css %} 
+<link rel='stylesheet' type='text/css' media='screen' href='static/css/posts.css'>
+{% endblock %}
+{% block js %} 
+<script src='main.js'></script>
+{% endblock %}
+{% block body %} 
+<br>
+<h1 style="display:inline"> All Posts </h1>
+<a style="display:inline" class="btn btn-success float-right" href="/posts/new"> + New Post </a>
+<hr>
+    {%for post in posts%}
+        <h2><b>{{  post.title  }}</b></h2>
+        <i>
+        {% if post.author: %}
+            <small>Written By: {{  post.author  }} Posted on :{{  post.date_posted  }} </small>
+        {% else: %}
+            <small>Written By: Unknown Posted on :{{  post.date_posted  }} </small>
+        {% endif %}
+        </i>    
+        
+        <br>
+        <br>
+        <p style="white-space:pre-wrap">{{  post.content  }}</p>
+        
+        <a class="btn btn-danger" href="/posts/delete/{{post.id}}" role="button">Delete</a>
+        <a class="btn btn-primary" href="/posts/edit/{{post.id}}" role="button">Edit</a>
+        <hr>
+    {% endfor %} 
+
+{% endblock %}

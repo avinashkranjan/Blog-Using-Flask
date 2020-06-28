@@ -1,0 +1,16 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+.wrap{
+	max-width: 1170px;
+	margin: 0 auto;
+	padding: 0 50px;
+}
+.clearfix{
+	clear: both;
+	content: "";
+	display: table;
+}
+input[type=text], input[type=password], input[type=submit]{
+	display: block;
+}

@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block head %} 
+<title>Edit Blog</title>
+{% endblock %}
+
+{% block body %} 
+    <h1>Edit Blog Post </h1>
+
+<hr>
+   <h2>Edit Here :</h2>
+   <form action = '/posts/edit/{{post.id}}' method="POST">
+        <label for="title">Title: </label>
+        <input type="text" class="form-control" name="title" id="title" value={{post.title}}>
+        <br>
+        <label for="author">Author: </label>
+        <input type="text" class="form-control" name="author" id="author" value={{post.author}}>
+        <br>
+        <label for="content">Post:</label>
+        <textarea class="form-control" rows="5" name="content" id="content" >{{post.content}}</textarea>
+        <br>
+        <input type="submit" value="SAVE" type="button" class="btn btn-success">
+    </form>
+
+{% endblock %}
