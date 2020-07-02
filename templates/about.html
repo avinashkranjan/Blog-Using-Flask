@@ -1,12 +1,20 @@
-{% extends 'base.html' %}
-
-{% block head %} 
+{% extends 'base.html' %} {% block head %}
 <title>About Us</title>
+{% endblock %} {% block body %}
+<br />
+<h1>About Authors:</h1>
+{% for post in posts%}
+    <div class="jumbotron">
+    <h1 class="display-4">{{ post.author }}</h1>
+    <p class="lead">
+        {{ post.author }} is a writer, artist, .She has been blogging since 2020 on
+        this platform.
+    </p>
+    <hr class="my-4" />
+    <p>To get in Touch with her</p>
+    <p class="lead">
+        <a class="btn btn-primary btn-lg" href="#" role="button">Visit Me</a>
+    </p>
+    </div>
+{% endfor %} 
 {% endblock %}
-
-{% block body %} 
-<br>
- <h1>About Us</h1>
-
- {% endblock %}
-    

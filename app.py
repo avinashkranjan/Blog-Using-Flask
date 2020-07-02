@@ -16,7 +16,7 @@ class BlogPost(db.Model):
     def __repr__(self):
         return 'Blog Post ' + str(self.id) 
 
-@app.route('/')
+@app.route('/', methods=['GET','POST'])
 def index():
     return render_template('index.html')
 
